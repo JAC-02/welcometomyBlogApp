@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Welcome To My Blog</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css')}}">
+</head>
+<body>
+	<img src="https://unnaturalteen.files.wordpress.com/2019/04/blog-welcome1-1.jpg">
+    <br>
+    <form action="greet" method="post">
+    	{% for message in get_flashed_messages()%}
+    		<p> {{message}} </p>
+    	{% endfor %}
+        <br>
+        <input type="text" name="name_input">
+        <br>
+        <input type="submit" name="GREET" id="greet">
+    </form>
+
+</body>
+</html>
